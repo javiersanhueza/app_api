@@ -6,6 +6,11 @@ Rails.application.routes.draw do
       devise_scope :user do
         post "sign_up", to: "registrations#create"
         post "sign_in", to: "sessions#create"
+        post "log_out", to: "sessions#destroy"
+      end
+      resources :books, only: [:index, :show, :create, :update, :destroy]
+      resources :books, only: [:index, :show, :create, :update, :destroy] do
+        resources :reviews, only: [:index, :show, :create, :update, :destroy]
       end
     end
   end

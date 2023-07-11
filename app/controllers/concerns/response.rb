@@ -6,4 +6,13 @@ module Response
       data: data
     }, status: status
   end
+
+  def render_rescue(exception)
+    Rails.logger.info { "#{exception.message}\n#{exception.backtrace}" }
+    render json: {
+      message: exception.message,
+      is_success: false,
+      data: {}
+    }, status: :bad_request
+  end
 end

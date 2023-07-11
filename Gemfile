@@ -34,6 +34,12 @@ gem 'dotenv-rails', require: 'dotenv/rails-now'
 # Gema para token de autenticación
 gem 'simple_token_authentication', '~> 1.0'
 
+# Gema para crear datos de prueba
+gem 'faker'
+
+# Gemara para las traducciones de los nuevos modelos
+gem 'i18n-tasks'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
